@@ -1,0 +1,171 @@
+$colorBlue: #0FAAF0
+$colorGreen: #58B20D
+$colorYellow: #FFBF00
+$colorRed: #D0021B
+$colorBlack: #333
+$colorGray: #777
+$colorLightBlue: #F5F9FB
+
+*
+	margin: 0
+	padding: 0
+
+html
+	height: 100%
+	display: block
+
+body
+	color: $colorBlack
+
+
+.container
+	padding: 40px 0
+	font: normal 14px/150% "Droid Sans", Helvetica, Arial, sans-serif
+
+
+	
+#left-col
+	#logo
+		margin-bottom: 20px
+
+	nav
+		position: fixed
+		margin: 0
+		padding: 0
+		li
+			list-style: none
+			display: block
+			margin-bottom: 5px
+			a
+				color: $colorBlue
+
+
+#right-col
+	section
+		/*background: lighten($colorLightBlue, 2.2%)*/
+		border-radius: 5px
+		border: 1px solid #eee
+		padding: 30px
+		margin: 0 -15px 25px
+	h1
+		font: lighter 20px/150% "Droid Sans", Helvetica, Arial, sans-serif
+		padding: 8px 15px
+		margin: -30px -30px 30px
+		border-bottom: 1px solid #eee
+
+
+
+/* COLORS ********************/
+
+#colorList
+	li
+		display: inline-block
+		width: 160px
+		background: white
+		border-radius: 4px
+		border: 1px solid #eee
+		padding: 10px
+		margin: 0 30px 30px 0
+		.name
+			font-size: 12px
+			color: #555
+			font-weight: bold
+			display: block
+		.value
+			font-size: 12px
+			color: #888
+			display: block
+		&:before
+			content: ""
+			display: block
+			height: 80px
+			border-radius: 3px 3px 0 0
+			margin: -10px -10px 10px
+
+		&#colorBlue:before
+			background: $colorBlue
+		&#colorGreen:before
+			background: $colorGreen
+		&#colorYellow:before
+			background: $colorYellow
+		&#colorRed:before
+			background: $colorRed
+		&#colorBlack:before
+			background: $colorBlack
+		&#colorGray:before
+			background: $colorGray
+		&#colorLightBlue:before
+			background: $colorLightBlue
+
+
+/* BUTTONS ********************/
+
+@mixin button()
+	display: inline-block
+	cursor: pointer
+	font: normal 16px/150% Helvetica, Arial, sans-serif
+	border-radius: 3px
+	color: white
+	padding: .3em .5em
+	margin: 1em
+	text-decoration: none!important
+	letter-spacing: .5px
+	transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1)
+	box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2)
+	&:hover
+		color: white
+		transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1)
+		box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2)
+	&:active
+		color: white
+		text-decoration: none
+		transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1)
+		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26)
+	&:visited
+		color: white
+		text-decoration: none
+	&::selection
+		background: none
+
+.btn-primary
+	@include button
+	background: $colorBlue
+	&:hover
+		background-color: lighten($colorBlue, 8%)
+	&:active
+		background-color: darken($colorBlue, 0%)
+
+.btn-secondary
+	@include button
+	background: transparent
+	box-shadow: none
+	color: $colorBlue
+	border: 1px solid $colorBlue	
+	&:hover, &:active
+		color: $colorBlue
+		box-shadow: none
+
+
+.btn-green
+	@include button
+	background: $colorGreen
+	&:hover
+		background-color: lighten($colorGreen, 4%)
+	&:active
+		background-color: darken($colorGreen, 0%)
+
+.btn-yellow
+	@include button
+	background: $colorYellow
+	&:hover
+		background-color: lighten($colorYellow, 10%)
+	&:active
+		background-color: darken($colorYellow, 0%)
+
+.btn-red
+	@include button
+	background: $colorRed
+	&:hover
+		background-color: lighten($colorRed, 6%)
+	&:active
+		background-color: darken($colorRed, 0%)
